@@ -18,6 +18,10 @@ public class Map {
             }
         }
     }
+    public char getCase(int l, int c) {
+        return map[nblig][nbcol];
+    }
+
     public void afficher() {
         for (int i = 0; i < nblig; i++) {
             for (int j = 0; j < nbcol; j++) {
@@ -27,8 +31,25 @@ public class Map {
         }
     }
 
-    public void level1() {
-
+    public void placer(int lig, int col, char perso) {// Test si on se trouve bien dans la grille.
+        if (lig < 0 || col < 0 ||lig > nblig || col > nbcol) {
+            System.out.print("Erreur de placement.");
+            return;
+        }
+        if (map[lig][col] == '#') // Si c'est = à vide
+        {
+            map[lig][col] = perso;
+        } else {
+            System.out.print("Erreur, cet emplacement n'est pas vide.");
+            return;
+        }
+    }
+    public void actualiser() {
+        for(int i = 0; i < nblig ; i++) {
+            for(int j = 0 ; j < nbcol ; j++) {
+                map[i][j] = ' ';
+            }
+        }
     }
 }
 //https://www.developpez.net/forums/d1315480/java/general-java/debuter-java/remplir-matrice-n-lignes-m-colonnes/
