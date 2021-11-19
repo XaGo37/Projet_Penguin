@@ -1,5 +1,7 @@
 package Penguin;
 
+import java.util.Scanner;
+
 public class Personnage {
 
     private String nom;
@@ -33,24 +35,23 @@ public class Personnage {
         this.yPerso = newY;
     }
 
-    public void deplacerPersonnage(int direction) {
-        switch(direction) {
-            case 1:// Haut
-                this.xPerso++;
-                break;
-            case 2:// Bas
-                this.xPerso--;
-                break;
-            case 3:// Gauche
-                this.yPerso++;
-                break;
-            case 4:// Droite
-                this.yPerso--;
-                break;
-            default:
-                System.out.println("Ceci n'est pas une direction valide.");
+    public void deplacerPersonnage() {
+        Scanner position = new Scanner(System.in);
+        System.out.println("Enter choice :");
+        char choice = position.next().charAt(0);
+
+        if(choice == 'A'){
+            this.xPerso++;
+        }
+        if(choice == 'B'){
+            this.xPerso--;
+        }
+        if(choice == 'C'){
+            this.yPerso++;
+        }
+        if(choice == 'D'){
+            this.yPerso--;
         }
     }
-
 }
 

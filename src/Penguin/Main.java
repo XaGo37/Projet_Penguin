@@ -3,19 +3,18 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main (String[] args) {
+
+    public static void main(String[] args) {
 
         Personnage perso = new Personnage();
-        Map worldMap = new Map(15, 19);
+        Map worldMap = new Map(5, 5);
 
-        Scanner sc1 = new Scanner(System.in);
+        while( perso.getXPerso() < worldMap.nblig  || perso.getYPerso() < worldMap.nbcol ){
+            worldMap.placer(perso.getXPerso(), perso.getYPerso(), 'J');
+            worldMap.afficher();
+            perso.deplacerPersonnage();
+            worldMap.actualiser();
 
-        worldMap.placer(perso.getXPerso(), perso.getYPerso(), 'J');
-        worldMap.afficher();
-        perso.deplacerPersonnage(4);
-        worldMap.actualiser();
-        worldMap.placer(perso.getXPerso(), perso.getYPerso(), 'J');
-        worldMap.afficher();
-
+        }
     }
 }

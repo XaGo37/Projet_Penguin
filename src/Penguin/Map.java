@@ -2,8 +2,8 @@ package Penguin;
 
 public class Map {
 
-    private int nblig;
-    private int nbcol;
+    public int nblig;
+    public int nbcol;
     private char[][] map;
 
     public Map(int lig, int col) {
@@ -25,17 +25,17 @@ public class Map {
     public void afficher() {
         for (int i = 0; i < nblig; i++) {
             for (int j = 0; j < nbcol; j++) {
-                System.out.print(" " + map[i][j]);
+                System.out.print(map[i][j]);
             }
             System.out.println();
         }
     }
-
     public void placer(int lig, int col, char perso) {// Test si on se trouve bien dans la grille.
-        if (lig < 0 || col < 0 ||lig > nblig || col > nbcol) {
+        if (lig < 0 || col < 0 || lig > nblig || col > nbcol) {
             System.out.print("Erreur de placement.");
             return;
         }
+
         if (map[lig][col] == '#') // Si c'est = à vide
         {
             map[lig][col] = perso;
@@ -44,10 +44,11 @@ public class Map {
             return;
         }
     }
+
     public void actualiser() {
         for(int i = 0; i < nblig ; i++) {
             for(int j = 0 ; j < nbcol ; j++) {
-                map[i][j] = ' ';
+                map[i][j] = '#';
             }
         }
     }
