@@ -31,7 +31,7 @@ public class Map {
         }
     }
     public void placer(int lig, int col, char perso) {// Test si on se trouve bien dans la grille.
-        if (lig < 0 || col < 0 || lig > nblig || col > nbcol) {
+        if (lig < 0 || col < 0 || lig > nblig-1 || col > nbcol-1) {
             System.out.print("Erreur de placement.");
             return;
         }

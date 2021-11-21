@@ -40,16 +40,16 @@ public class Personnage {
         System.out.println("Enter choice :");
         char choice = position.next().charAt(0);
 
-        if(choice == 'A'){
+        if(choice == 'd'){
             this.xPerso++;
         }
-        if(choice == 'B'){
+        if(choice == 'q'){
             this.xPerso--;
         }
-        if(choice == 'C'){
+        if(choice == 's'){
             this.yPerso++;
         }
-        if(choice == 'D'){
+        if(choice == 'z'){
             this.yPerso--;
         }
     }
