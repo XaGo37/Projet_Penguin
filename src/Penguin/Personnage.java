@@ -9,8 +9,8 @@ public class Personnage {
     private int yPerso;
 
     public Personnage() {
-        xPerso = 0;
-        yPerso = 0;
+        xPerso = 1;
+        yPerso = 6;
     }
 
     //Getter
